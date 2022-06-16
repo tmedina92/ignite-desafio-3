@@ -1,0 +1,104 @@
+.taskForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1.75rem;
+  gap: .5rem;
+
+  input {
+    width: 40rem;
+    height: 3.375rem;
+    padding: 1rem;
+    background: var(--grey-400);
+    color: var(--grey-300);
+    border: 1px solid var(--grey-700);
+    outline: none;
+    border-radius: 8px;
+  }
+  .createButton {
+    width: 5.625rem;
+    height: 3.25rem;
+    background: var(--blue-500);
+    color: var(--grey-100);
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    gap: .5rem;
+  }
+}
+.taskBoard {
+  padding: 4.5625rem 35rem 20rem 35rem;
+  display: flex;
+  flex-direction: column;
+
+  .taskHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .taskCreated {
+      display: flex;
+      gap: .5rem;
+      color: var(--blue-300);
+      font-size: 0.875rem;
+      font-weight: 700;
+      align-items: center;
+
+      .taskCreatedCounter {
+        width: 1.8rem;
+        height: 1.5rem;
+        background: var(--grey-400);
+        color: var(--grey-100);
+        border-radius: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+      }
+    }
+    .taskConcluded {
+      display: flex;
+      gap: .5rem;
+      color: var(--purple-300);
+      font-weight: 700;
+      font-size: 0.875rem;
+      align-items: center;
+
+      .taskConcludedCounter {
+        width: 1.8rem;
+        height: 1.5rem;
+        background: var(--grey-400);
+        color: var(--grey-100);
+        border-radius: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+      }
+    }
+  }
+  .taskPainel {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    border-top: 1px solid var(--grey-400);
+    border-radius: 8px;
+
+    padding: 4rem 1.5rem 4rem 1.5rem;
+    margin-top: 1.5rem;
+    img {
+      margin-bottom: 1rem;
+    }
+    strong {
+      color: var(--grey-300);
+      line-height: 1.6
+    }
+    p {
+      color: var(--grey-300);
+    }
+  }
+}
