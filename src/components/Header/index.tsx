@@ -1,4 +1,4 @@
-import rocketImg from '../assets/Rocket.svg'
+import rocketImg from '../../assets/Rocket.svg';
 import './styles.scss';
 
 export function Header() {

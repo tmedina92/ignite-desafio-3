@@ -1,5 +1,5 @@
 import { PlusCircle } from 'phosphor-react';
-import taskIcon from '../assets/Task.svg';
+import taskIcon from '../../assets/Task.svg';
 import './styles.scss';
 
 export function Feed() {
