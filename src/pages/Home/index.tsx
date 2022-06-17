@@ -1,10 +1,16 @@
 import { PlusCircle } from 'phosphor-react';
 import taskIcon from '../../assets/Task.svg';
+import rocketImg from '../../assets/Rocket.svg';
 import './styles.scss';
 
-export function Feed() {
+export function Home() {
   return (
     <>
+      <header className="header">
+        <img src={rocketImg} alt="" />
+        <p className="title">to</p>
+        <span>do</span>
+      </header>
       <form className="taskForm">
         <input 
           type="text" 
