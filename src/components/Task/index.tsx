@@ -12,7 +12,7 @@ export function Task() {
     config: config.gentle,
     ref: checkboxAnimationRef
   });
-  const [checkmarkLength, setCheckmarkLength] = useState('');
+  const [checkmarkLength, setCheckmarkLength] = useState(0);
 
   const checkmarkAnimationRef = useSpringRef();
   const checkmarkAnimationStyle = useSpring({
@@ -50,6 +50,11 @@ export function Task() {
             stroke="#fff"
             strokeDasharray={checkmarkLength}
             strokeDashoffset={checkmarkAnimationStyle.x}
+            ref={(ref) => {
+              if (ref) {
+                setCheckmarkLength(ref.getTotalLength());
+              }
+            }}
           />
         </animated.svg>
       </label>
