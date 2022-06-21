@@ -44,6 +44,11 @@
     outline: none;
     border-radius: 8px;
   }
+
+  input:focus {
+    color: $grey-100;
+    border: 1px solid $blue-500;
+  }
   .createButton {
     width: 5.625rem;
     height: 3.25rem;
@@ -68,8 +73,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-top: 4.5rem;
-  
+  margin-top: 4.5rem;  
+    
   .taskHeader {
     display: flex;
     flex-direction: row;
@@ -79,6 +84,7 @@
     height: 100%;
     margin: auto;
     max-width: 46rem;
+    margin-bottom: 1.5rem;
 
     .taskCreated {
       display: flex;
@@ -121,32 +127,6 @@
         justify-content: center;
         font-size: 0.875rem;
       }
-    }
-  }
-  .taskPainel {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center;
-    width: 80%;
-    height: 100%;
-    margin: auto;
-    max-width: 46rem;
-
-    border-top: 1px solid $grey-400;
-    border-radius: 8px;
-    padding: 4rem 0 0 0;
-    margin-top: 1.5rem;
-
-    img {
-      margin-bottom: 1rem;
-    }
-    strong {
-      color: $grey-300;
-      line-height: 1.6
-    }
-    p {
-      color: $grey-300;
     }
   }
 }

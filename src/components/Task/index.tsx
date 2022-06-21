@@ -3,7 +3,13 @@ import { animated, config, useChain, useSpring, useSpringRef } from "react-sprin
 import { Trash } from "phosphor-react";
 import './styles.scss';
 
-export function Task() {
+interface TaskProps {
+  content: string;
+  deleteTask: () => void;
+  isTaskConcluded: () => void;
+}
+
+export function Task({ content, deleteTask, isTaskConcluded }:TaskProps) {
   const [isChecked, setIsChecked] = useState(false)
   const checkboxAnimationRef = useSpringRef();
   const checkboxAnimationStyle = useSpring({
@@ -25,7 +31,7 @@ export function Task() {
     isChecked 
       ?[checkboxAnimationRef, checkmarkAnimationRef]
       :[checkmarkAnimationRef, checkboxAnimationRef],
-    [0, 0.1]  
+    [0, 0.2]  
   );
 
   return (
@@ -35,18 +41,19 @@ export function Task() {
           type="checkbox" 
           onChange={() => {
             setIsChecked(!isChecked);
+            isTaskConcluded()
           }}
         />
         <animated.svg
           style={checkboxAnimationStyle} 
           className={`checkbox ${isChecked ? "checkbox--active" : ""}`}
           aria-hidden="true"
-          viewBox="0 0 15 11"
+          viewBox="0 1 14 11"
           fill="none"
         >
           <animated.path
             d="M1 4.5L5 9L14 1"
-            strokeWidth="2"
+            strokeWidth="3"
             stroke="#fff"
             strokeDasharray={checkmarkLength}
             strokeDashoffset={checkmarkAnimationStyle.x}
@@ -58,8 +65,8 @@ export function Task() {
           />
         </animated.svg>
       </label>
-      <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-      <button className="taskDelete" title="Deletar comentário">
+    <p className={`${isChecked ? "textChecked" : "textUnchecked"}`}>{content}</p>
+      <button onClick={() => deleteTask()} className="taskDelete" title="Deletar comentário">
         <Trash size={20} />
       </button>
     </div>
