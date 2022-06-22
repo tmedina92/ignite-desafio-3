@@ -6,7 +6,6 @@ import { TaskEmpty } from "../../components/TaskEmpty";
 import "./styles.scss";
 
 export function Home() {
-
   const [tasks, setTasks] = useState([]);
 
   function handleCreateNewTask(event: FormEvent) {
