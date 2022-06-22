@@ -17,3 +17,25 @@ body, input, textarea, button {
   font-weight: 400;
   font-size: 1rem;
 }
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $grey-700;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: $grey-600;
+  border-radius: 10px;
+  border: 3px solid $grey-700;
+  transition: 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $grey-500;
+}

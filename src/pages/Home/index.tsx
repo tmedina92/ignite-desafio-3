@@ -6,12 +6,14 @@ import { TaskEmpty } from "../../components/TaskEmpty";
 import "./styles.scss";
 
 export function Home() {
+
   const [tasks, setTasks] = useState([]);
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
 
     const newTask = { concluded: false, text: event.target.task.value };
+
     setTasks([...tasks, newTask]);
 
     event.target.task.value = "";
@@ -22,11 +24,11 @@ export function Home() {
   }
 
   function isTaskConcluded(indexId: number) {
-    setTasks((prev) =>
+    setTasks((prev) => 
       prev.map((task, index) => {
         return index === indexId
           ? { ...task, concluded: !task.concluded }
-          : task;
+          : task
       })
     );
   }
@@ -44,6 +46,7 @@ export function Home() {
           placeholder="Adicione uma nova tarefa"
           name="task"
           autoComplete="off"
+          required
         />
         <button className="createButton">
           Criar
@@ -64,6 +67,7 @@ export function Home() {
         {tasks.length > 0 ? (
           tasks.map((task, index) => (
             <Task
+              key={index}
               isTaskConcluded={() => isTaskConcluded(index)}
               deleteTask={() => deleteTask(index)}
               content={task.text}
